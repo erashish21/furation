@@ -94,3 +94,27 @@ module.exports.updateItem = async function(req,res){
         });
     }
 }
+
+// Delete item
+module.exports.deleteItem = async function(req,res){
+    try {
+        let item =await Item.findByIdAndDelete(req.params.id);
+        if(!item){
+            return res.status(404).json({
+                success:false,
+                message:"Item not found"
+            });
+        }
+        res.status(200).json({
+            success:true,
+            message:"Item deleted Successfully",
+            item
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:"Error while deleting the item"
+        });
+    }
+}
