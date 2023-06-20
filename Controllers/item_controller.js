@@ -46,3 +46,26 @@ module.exports.getItem = async function(req,res){
         })
     }
 }
+
+// Get all Items
+module.exports.getAllItems = async function(req,res){
+    try {
+        let items = await Item.find({});
+        if(!items){
+            res.status(404).json({
+                success:false,
+                message:"Items not found"
+            });
+        }
+        res.status(200).json({
+            success:true,
+            message:"Items found Successfully",
+            items
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:"Error while fetching the items"
+        });
+    }
+}
