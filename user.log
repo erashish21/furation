@@ -1,1 +1,14 @@
 {"level":"info","message":"User Register Successfully","timestamp":"2023-06-20T10:53:18.384Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:05:14.006Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:06:06.507Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:07:55.577Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:08:40.814Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:10:38.734Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:11:04.740Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:13:02.770Z"}
+{"level":"info","message":"User Register Successfully","timestamp":"2023-06-20T11:13:40.533Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:14:56.778Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:15:45.369Z"}
+{"level":"error","message":"Please Enter Email and Password","timestamp":"2023-06-20T11:16:58.552Z"}
+{"level":"error","message":"Invalid email or Password","timestamp":"2023-06-20T11:17:14.652Z"}
+{"level":"error","message":"Error while register a User","timestamp":"2023-06-20T11:20:19.743Z"}
