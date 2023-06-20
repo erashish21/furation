@@ -55,30 +55,39 @@ module.exports.getItem = async function(req,res){
 }
 
 // Get all Items
-module.exports.getAllItems = async function(req,res){
+module.exports.getAllItems = async function(req, res) {
     try {
-        let items = await Item.find({});
-        if(!items){
-            res.status(404).json({
-                success:false,
-                message:"Items not found"
-            });
-            logger.itemLogger.log('error',"Item not found")
-        }
-        res.status(200).json({
-            success:true,
-            message:"Items found Successfully",
-            items
+      const { page = 1, limit = 5 } = req.query;
+      const options = {
+        page: parseInt(page, 10),
+        limit: parseInt(limit, 10),
+      };
+  
+      const items = await Item.paginate({}, options);
+      if (items.docs.length === 0) {
+        return res.status(404).json({
+          success: false,
+          message: "Items not found",
         });
-        logger.itemLogger.log('info',"Item found Successfully")
+      }
+  
+      res.status(200).json({
+        success: true,
+        message: "Items found successfully",
+        items: items.docs,
+        totalItems: items.totalDocs,
+        totalPages: items.totalPages,
+        currentPage: items.page,
+      });
+      logger.itemLogger.log("info", "Items found successfully");
     } catch (error) {
-        res.status(500).json({
-            success:false,
-            message:"Error while fetching the items"
-        });
-        logger.itemLogger.log('error',"Error while fetching the items")
+      res.status(500).json({
+        success: false,
+        message: "Error while fetching the items",
+      });
+      logger.itemLogger.log("error", "Error while fetching the items", error);
     }
-}
+};
 
 // Update item details
 module.exports.updateItem = async function(req,res){
