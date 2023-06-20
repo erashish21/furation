@@ -4,6 +4,6 @@ const router = express.Router();
 
 const itemController = require("../Controllers/item_controller");
 
-router.get('/item/new',itemController.create);
+router.post('/item/new',itemController.create);
 
 module.exports = router;
