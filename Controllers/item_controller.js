@@ -1,4 +1,5 @@
 const Item = require('../Models/itemModel');
+const logger = require('../logger/logger');
 
 
 
@@ -16,34 +17,40 @@ module.exports.create = async function(req,res){
             message:"Item Created Successfully",
             item
         });
+        logger.itemLogger.log('info',"Item Created Successfully")
     } catch (error) {
         res.status(500).json({
             success:false,
             message:"Error while creating the item"
         });
+        logger.itemLogger.log('error',"Error while creating the item")
     }
 };
 
 // Get item using item id
 module.exports.getItem = async function(req,res){
+    
     try {
         let item = await Item.findById(req.params.id);
         if(!item){
-            return res.status(404).json({
+            res.status(404).json({
                 success:false,
                 message:"Item not found"
             });
+            logger.itemLogger.log('error',"Item not found")
         }
         res.status(200).json({
             success:true,
             message:"Item get Successfully",
             item
         });
+        logger.itemLogger.log('info',"Item get Successfully")
     } catch (error) {
         res.status(500).json({
             success:false,
             message:"Error while fetching the item"
         })
+        logger.itemLogger.log('error',"Error while fetching the item")
     }
 }
 
@@ -56,17 +63,20 @@ module.exports.getAllItems = async function(req,res){
                 success:false,
                 message:"Items not found"
             });
+            logger.itemLogger.log('error',"Item not found")
         }
         res.status(200).json({
             success:true,
             message:"Items found Successfully",
             items
         });
+        logger.itemLogger.log('info',"Item found Successfully")
     } catch (error) {
         res.status(500).json({
             success:false,
             message:"Error while fetching the items"
         });
+        logger.itemLogger.log('error',"Error while fetching the items")
     }
 }
 
@@ -77,21 +87,24 @@ module.exports.updateItem = async function(req,res){
             new:true,
         });
         if(!item){
-            return res.status(404).json({
+            res.status(404).json({
                 success:false,
                 message:"Item not found"
             });
+            logger.itemLogger.log('error',"Item not found")
         }
         res.status(200).json({
             success:true,
             message:"Item updated Successfully",
             item
         });
+        logger.itemLogger.log('info',"Item updated Successfully")
     } catch (error) {
         res.status(500).json({
             success:false,
             message:"Error while updating the item details"
         });
+        logger.itemLogger.log('error',"Error while updating the item details")
     }
 }
 
@@ -100,21 +113,24 @@ module.exports.deleteItem = async function(req,res){
     try {
         let item =await Item.findByIdAndDelete(req.params.id);
         if(!item){
-            return res.status(404).json({
+            res.status(404).json({
                 success:false,
                 message:"Item not found"
             });
+            logger.itemLogger.log('error',"Item not found")
         }
         res.status(200).json({
             success:true,
             message:"Item deleted Successfully",
             item
         })
+        logger.itemLogger.log('info',"Item deleted Successfully")
         
     } catch (error) {
         res.status(500).json({
             success:false,
             message:"Error while deleting the item"
         });
+        logger.itemLogger.log('error',"Error while deleting the item")
     }
 }
