@@ -13,8 +13,10 @@ app.use(express.json());
 
 // Route imports
 const item = require("./Routes/itemRoute");
+const user = require("./Routes/userRoute");
 
 app.use('/api',item);
+app.use('/api',user);
 
 
 // Run the server
