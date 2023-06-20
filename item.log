@@ -22,3 +22,7 @@
 {"level":"info","message":"Item Created Successfully","timestamp":"2023-06-20T11:43:34.624Z"}
 {"level":"info","message":"Item get Successfully","timestamp":"2023-06-20T11:44:36.191Z"}
 {"level":"info","message":"Items found successfully","timestamp":"2023-06-20T11:45:14.639Z"}
+{"level":"error","message":"Error while creating the item","timestamp":"2023-06-20T13:11:02.849Z"}
+{"level":"error","message":"Error while creating the item","timestamp":"2023-06-20T13:11:21.809Z"}
+{"level":"error","message":"Error while creating the item","timestamp":"2023-06-20T13:11:43.896Z"}
+{"level":"error","message":"Error while creating the item","timestamp":"2023-06-20T13:12:34.171Z"}

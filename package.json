@@ -1,13 +1,12 @@
 {
   "name": "crud_operation",
   "version": "1.0.0",
-  "description": "",
   "main": "Server.js",
   "scripts": {
     "start": "nodemon Server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Majazul Haque",
+  "author": "Ashish kumar",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -24,5 +23,7 @@
     "passport-jwt": "^4.0.1",
     "validator": "^13.9.0",
     "winston": "^3.9.0"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
