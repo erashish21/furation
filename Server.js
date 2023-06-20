@@ -10,6 +10,11 @@ const app = express();
 
 app.use(express.json());
 
+// Route imports
+const item = require("./Routes/itemRoute");
+
+app.use('/api',item);
+
 
 // Run the server
 app.listen(process.env.PORT,()=>{
